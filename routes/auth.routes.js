@@ -95,6 +95,9 @@ router.post("/login", (req, res, next) => {
                 return;
             } else if (bcryptjs.compareSync(password, user.passwordHash)){
                 //login successful
+
+                req.session.currentUser = user;
+
                 res.render("auth/user-profile", {userDetails: user});
             } else {
                 //login failed
@@ -110,9 +113,11 @@ router.post("/login", (req, res, next) => {
 
 
 
+
+
 //GET user-profile
 router.get('/user-profile', (req, res) => {
-    res.render("auth/user-profile");
+    res.render("auth/user-profile", {userDetails: req.session.currentUser});
 });
 
 
