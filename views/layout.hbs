@@ -16,18 +16,12 @@
          <a href="/books">Books</a>
          <a href="/books/create">Create new book</a>
          <a href="/authors">Authors</a>
+         <a href="/signup">Signup</a>
+         <a href="/login">Login</a>
 
-
-         {{#if userDetails}}
-            <form id="logout-form" method="POST" action="/logout" >
-               <button>Logout</button>
-            </form>
-         {{else}}
-            <a href="/signup">Signup</a>
-            <a href="/login">Login</a>
-         {{/if}}
-
-
+         <form id="logout-form" method="POST" action="/logout" >
+            <button>Logout</button>
+         </form>
 
       </nav>
 
